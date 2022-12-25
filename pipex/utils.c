@@ -7,28 +7,6 @@ int ft_strlen(char *str)
 		i++;
 	return (i);
 }
-char *ft_strjoin(char *s1, char *s2)
-{
-	int i = 0;
-	int len = 0;
-	char *copy;
-
-	len = ft_strlen(s1) + ft_strlen(s2);
-	copy = malloc(sizeof(char) * (len + 1));
-	while(s1[i])
-	{
-		copy[i] = s1[i];
-		i++;
-	}
-	while(*s2)
-	{
-		copy[i] = *s2;
-		i++;
-		s2++;
-	}
-	copy[i] = '\0';
-	return (copy);
-}
 char **free_arr(char **tab)
 {
 	int i = 0;
@@ -104,4 +82,26 @@ char **ft_split(char *str, char c)
 	}
 	arr[j] = 0;
 	return (arr);
+}
+char *ft_strjoin(char *s1, char *s2)
+{
+	int i = 0;
+	int len = 0;
+	char *copy;
+
+	len = ft_strlen(s1) + ft_strlen(s2);
+	copy = malloc(sizeof(char) * (len + 1));
+	while(s1[i])
+	{
+		copy[i] = s1[i];
+		i++;
+	}
+	while(*s2)
+	{
+		copy[i] = *s2;
+		i++;
+		s2++;
+	}
+	copy[i] = '\0';
+	return (copy);
 }

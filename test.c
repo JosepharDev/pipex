@@ -6,10 +6,10 @@ int main (int argc, char *argv[], char *envp[])
 {
   char *home, *host;
 
-  home = getenv("HOME");
-  host = getenv("HOSTNAME");
+  home = getenv("PATH");
+  host = getenv("LOGNAME");
 
-  printf ("Your home directory is %s on %s.\n", home, host);
+  printf ("Your home directory is %s\n on %s.\n", home, host);
 
   return 0;
 }

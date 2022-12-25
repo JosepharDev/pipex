@@ -9,6 +9,20 @@
 #include <string.h>
 #include <sys/wait.h>
 
+typedef struct s_struct
+{
+	int infile;
+	int outfile;
+	pid_t pid;
+	int fd[2];
+	char **path;
+	char **cmd;
+	char *tmp;
+	char *command;
+	char **envp;
+	char **av;
+}t_struct;
+
 int ft_strlen(char *str);
 char *ft_strjoin(char *s1, char *s2);
 void p_proc(char **envp, char **av, int *fd);
