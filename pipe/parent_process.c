@@ -6,7 +6,7 @@
 /*   By: yoyahya <yoyahya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 16:02:38 by yoyahya           #+#    #+#             */
-/*   Updated: 2022/12/25 17:20:02 by yoyahya          ###   ########.fr       */
+/*   Updated: 2022/12/25 19:11:51 by yoyahya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void	parent_process(t_struct pipex)
 	if (!pipex.tmp)
 	{
 		free_here(pipex.cmd);
-		ft_exit();
+		perror("Error");
+		exit(127);
 	}
 	if (execve(pipex.tmp, pipex.cmd, pipex.envp) == -1)
 		ft_exit();
