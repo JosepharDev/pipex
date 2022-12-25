@@ -18,8 +18,11 @@ int	main(int ac, char **av, char **envp)
 		{
 			infile = open(av[1], O_RDONLY, 0777);
 			outfile = open(av[ac - 1], O_WRONLY | O_CREAT | O_TRUNC, 0777);
-			dup2(infile, 0);
+			dup2(infile, STDIN_FILENO);
 		}
+		while(flag < ac - 2)
+			child_process(av[flag++], envp);
+			execute(av[ac - 2], envp);
 	}
 	else
 		write(1, "Argumment Not Valid", 19);
