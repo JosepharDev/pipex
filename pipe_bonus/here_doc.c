@@ -3,7 +3,7 @@
 void	here_doc(char *av, int ac)
 {
 	pid_t pid;
-	int	fd;
+	int	fd[2];
 	char *line;
 	if(ac < 6)
 		exit(1);

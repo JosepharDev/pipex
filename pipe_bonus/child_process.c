@@ -1,25 +1,22 @@
-#include "pipex.bonus.h"
+#include "pipex_bonus.h"
 
-void child_process(char *av, char **envp)
+void child_process(char *av, char **envp,t_struct pipex)
 {
-	pid_t pid;
-	int fd[2];
-
-	if (pipe(fd) < 0)
+	if (pipe(pipex.fd) < 0)
 		exit(1);
-	pid = fork();
-	if(pid == -1)
+	pipex.pid = fork();
+	if(pipex.pid == -1)
 		exit(1);
-	if(pid == 0)
+	if(pipex.pid == 0)
 	{
-		close(fd[0]);
-		dup2(fd[1], STDOUT_FILENO);
-		excute(av, envp);
+		close(pipex.fd[0]);
+		dup2(pipex.fd[1], STDOUT_FILENO);
+		ft_execve(av, envp, pipex);
 	}
 	else
 	{
-		close(fd[1]);
-		dup2(fd[0], STDIN_FILENO);
-		waitpid(pid, NULL, 0);
+		close(pipex.fd[1]);
+		dup2(pipex.fd[0], STDIN_FILENO);
+		waitpid(pipex.pid, NULL, 0);
 	}
 }
