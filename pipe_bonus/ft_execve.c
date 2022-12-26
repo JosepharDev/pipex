@@ -12,7 +12,8 @@ void	ft_execve(char *av, char **envp, t_struct pipex)
 	if (!pipex.tmp)
 	{
 		free_here(pipex.cmd);
-		ft_exit();
+		perror("Error");
+		exit(127);
 	}
 	if (execve(pipex.tmp, pipex.cmd, pipex.envp) == -1)
 		ft_exit();

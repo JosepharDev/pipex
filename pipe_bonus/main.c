@@ -12,7 +12,7 @@ int	main(int ac, char **av, char **envp)
 		if(strncmp("here_doc", pipex.av[1], 8) == 0)
 		{
 			flag = 3;
-			pipex.infile = open(pipex.av[ac - 1], O_WRONLY | O_CREAT | O_APPEND , 0777);
+			pipex.outfile = open(pipex.av[ac - 1], O_WRONLY | O_CREAT | O_APPEND , 0777);
 			if (pipex.infile < 0)
 				exit(1);
 			here_doc(pipex.av[2], ac);
