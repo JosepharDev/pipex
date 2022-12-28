@@ -6,7 +6,7 @@
 /*   By: yoyahya <yoyahya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 15:51:28 by yoyahya           #+#    #+#             */
-/*   Updated: 2022/12/26 18:22:15 by yoyahya          ###   ########.fr       */
+/*   Updated: 2022/12/28 09:42:14 by yoyahya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@ void	child_process(t_struct pipex)
 	dup2(pipex.infile, 0);
 	close(pipex.fd[0]);
 	pipex.cmd = ft_split(pipex.av[2], ' ');
-	if (access(pipex.cmd[0], F_OK) == 0)
+	if (access(pipex.cmd[0], F_OK | X_OK) == 0)
 	{
 		execve(pipex.cmd[0], pipex.cmd, pipex.envp);
-		ft_exit();
 	}
 	pipex.tmp = get_path(pipex);
 	if (!pipex.tmp)

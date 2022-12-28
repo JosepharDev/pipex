@@ -6,19 +6,18 @@
 /*   By: yoyahya <yoyahya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:29:40 by yoyahya           #+#    #+#             */
-/*   Updated: 2022/12/26 16:29:41 by yoyahya          ###   ########.fr       */
+/*   Updated: 2022/12/27 17:07:11 by yoyahya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PIPEX_H
 # define PIPEX_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <stdlib.h>
 # include <fcntl.h>
 # include <unistd.h>
-# include <string.h>
+# include <stdio.h>
 # include <sys/wait.h>
 
 typedef struct s_struct
