@@ -1,6 +1,7 @@
 # pipex
 
 resources :
+<pre>
         <a href="https://www.gnu.org/software/libc/manual/html_node/Creating-a-Process.html">Creating a Process (The GNU C Library)</a><br />
         <a href="https://www.gnu.org/software/libc/manual/html_node/Creating-a-Pipe.html">Creating a Pipe (The GNU C Library)</a> <br />
         <a href="https://tldp.org/LDP/lpg/node12.html">6.2.3 Pipes the Easy Way!</a><br />
@@ -51,3 +52,4 @@ resources :
         <a href="https://web.stanford.edu/class/archive/cs/cs110/cs110.1196/static/lectures/06-Execvp-Pipes-and-Interprocess-Communication/lecture-06-execvp-pipes-interprocess-communication.pdf">lecture-06-execvp-pipes-interprocess-communication.pdf</a><br />
         <a href="https://upsilon.cc/~zack/teaching/1314/progsyst/cours-03-pipe.pdf">Programmation Systèmes Cours 3 — Interprocess Communication and Pipes</a><br />
         <a href="https://techiefood4u.files.wordpress.com/2020/02/operating_systems_three_easy_pieces.pdf">operating_systems_three_easy_pieces.pdf</a><br />
+</pre>
